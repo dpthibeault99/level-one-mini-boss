@@ -1,0 +1,22 @@
+// Professor, this .js is ment for me to take 
+// notes on thins i figure out while doing the levels
+
+// =================moving the ball=================
+
+//If speedX is positive → ball moves right
+//If speedX is negative → ball moves left
+
+// =================boundary check=================
+
+//this.x = center of the ball
+//this.radius = distance from center to edge of the ball
+//this.canvas.width = right edge of the screen
+
+//this.x + this.radius = the right side of the ball
+// ^^^ this line asks this question --->
+//Has the right side of the ball (this.x + this.radius) 
+//gone past the right edge of the canvas (this.canvas.width)?”
+
+// this stops the ball --->
+//this.x = this.canvas.width - this.radius;
+// the center of the ball (this.x) is the canvas width (edge) subtract the distance of the radius 
