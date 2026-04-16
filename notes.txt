@@ -20,3 +20,40 @@
 // this stops the ball --->
 //this.x = this.canvas.width - this.radius;
 // the center of the ball (this.x) is the canvas width (edge) subtract the distance of the radius 
+
+// =================fixed update loop=================
+
+// *****Old Loop*****
+
+    update() {
+        this.x += this.speedX; // having both
+        this.y += this.speedY; // moves diagnally
+
+        // also this is an infinte loop
+        if (this.x + this.radius > this.canvas.width) { // right side
+            this.x = this.canvas.width - this.radius;
+            this.speedX = -5; //'-' moves left ' ' moves
+        }
+        if(this.x - this.radius < 0){ // left side
+            this.speedX = 5;
+        }
+        if (this.y + this.radius > this.canvas.height){ // bottom
+            this.y = this.canvas.height - this.radius;
+            this.speedY = -5;
+            this.speedX = -5;
+        }
+        if (this.y - this.radius < 0) { // top
+        this.y = this.radius;
+        this.speedY = 5;
+}
+}
+
+//******speedX/speedY problems*****
+
+having fixed speeds, posative or negative, forced the ball to go that direction every time
+
+so now, having it set to its opposite helps
+
+this.speedX = -this.speedX OR this.speedY = -this.speedY
+
+this also keeps the same speed, buy changes direction
