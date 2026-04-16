@@ -27,27 +27,32 @@ export class Ball {
      }
   
 
-    update() {
-        this.x += this.speedX; // having both
-        this.y += this.speedY; // moves diagnally
+update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
 
-        // also this is an infinte loop
-        if (this.x + this.radius > this.canvas.width) { // right side
-            this.x = this.canvas.width - this.radius;
-            this.speedX = -5; //'-' moves left ' ' moves
-        }
-        if(this.x - this.radius < 0){ // left side
-            this.speedX = 5;
-        }
-        if (this.y + this.radius > this.canvas.height){ // bottom
-            this.y = this.canvas.height - this.radius;
-            this.speedY = -5;
-            this.speedX = -5;
-        }
-    //     if (this.y + this.radius < this.canvas.height){ // top
-    //         this.y = this.canvas.height + this.radius;
-    //         this.speedY = 5;
-    //         this.speedX = 5;
-    // }
+    // RIGHT
+    if (this.x + this.radius > this.canvas.width) {
+        this.x = this.canvas.width - this.radius;
+        this.speedX = -this.speedX;   
+    }
+
+    // LEFT
+    if (this.x - this.radius < 0) {
+        this.x = this.radius;
+        this.speedX = -this.speedX;
+    }
+
+    // BOTTOM
+    if (this.y + this.radius > this.canvas.height) {
+        this.y = this.canvas.height - this.radius;
+        this.speedY = -this.speedY;
+    }
+
+    // TOP
+    if (this.y - this.radius < 0) {
+        this.y = this.radius;
+        this.speedY = -this.speedY;
+    }
 }
 }
