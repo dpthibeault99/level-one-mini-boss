@@ -35,24 +35,28 @@ update() {
     if (this.x + this.radius > this.canvas.width) {
         this.x = this.canvas.width - this.radius;
         this.speedX = -this.speedX;   
+        this.color = "#e42222"
     }
 
     // LEFT
     if (this.x - this.radius < 0) {
         this.x = this.radius;
         this.speedX = -this.speedX;
+        this.color = "#3700ff"
     }
 
     // BOTTOM
     if (this.y + this.radius > this.canvas.height) {
         this.y = this.canvas.height - this.radius;
         this.speedY = -this.speedY;
+        this.color = "#48fd42"
     }
 
     // TOP
     if (this.y - this.radius < 0) {
         this.y = this.radius;
         this.speedY = -this.speedY;
+        this.color = "#ffa600"
     }
 }
 }
